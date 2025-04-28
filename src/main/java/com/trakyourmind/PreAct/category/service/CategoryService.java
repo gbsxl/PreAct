@@ -1,10 +1,7 @@
 package com.trakyourmind.PreAct.category.service;
 
-import com.trakyourmind.PreAct.category.entity.CategoryEntity;
+import com.trakyourmind.PreAct.category.entity.Category;
 import com.trakyourmind.PreAct.category.repository.CategoryRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,15 +15,15 @@ public class CategoryService {
         this.repository = repository;
     }
 
-    public List<CategoryEntity> listAllCategories(){
+    public List<Category> listAllCategories(){
         return repository.findAll();
     }
 
-    public CategoryEntity createCategory(CategoryEntity category){
+    public Category createCategory(Category category){
         return repository.save(category);
     }
 
-    public Optional<CategoryEntity> findCategoryById(Long id){
+    public Optional<Category> findCategoryById(Long id){
         return repository.findById(id);
     }
 
